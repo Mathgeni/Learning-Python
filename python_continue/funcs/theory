@@ -1,0 +1,6 @@
+# Порядок переменных
+def my_func(a, b, *args, name='Gvido', age=17, **kwargs):
+    print(a, b)
+    print(args)
+    print(name, age)
+    print(kwargs)
