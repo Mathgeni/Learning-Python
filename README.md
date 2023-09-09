@@ -1,3 +1,2 @@
-# learning1
-
-This code represents my progress in learning Python3
+# Learning Python 3
+> - This repository represents my progress in learning python
