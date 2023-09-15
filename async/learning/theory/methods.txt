@@ -1,0 +1,26 @@
+asyncio.run(coro, *, debug=False)  - создаёт цикл событий и запускает указанный coroutine в нём, после завершения работы выполнения coro, автоматически закрывает цикл событий при завершении. Этот метод является основным методом для запуска и управления asyncio приложениями.
+
+asyncio.sleep(delay, result=None, *, loop=None) - приостанавливает выполнение текущей корутины на delay секунд.
+
+asyncio.create_task(coro, *, name=None) - оборачивает coro в обёртку задачи, т.е. она будет запланирована для выполнения в цикле событий.
+
+asyncio.wait_for(coro, timeout, *, loop=None) - ожидает завершения coro, и если выполнение не завершено в течение timeout секунд, вызывается asyncio.TimeoutError.
+
+asyncio.gather(*aws, loop=None, return_exceptions=False) - конкурентно запускает awaitable объекты, переданные в функцию как последовательность *aws и собирает результаты их работы.
+
+asyncio.wait(fs, *, loop=None, timeout=None, return_when=ALL_COMPLETED) - функция которая позволяет ожидать завершения нескольких корутин/future и возвращает два списка: список выполненных корутин и список невыполненных корутин.
+
+asyncio.ensure_future(coro_or_future, *, loop=None) - оборачивает корутину coro_or_future в Future и запускает ее.
+
+asyncio.get_event_loop() - метод возвращает текущий цикл событий для текущего контекста.
+
+asyncio.new_event_loop() - метод создает новый цикл событий.
+
+asyncio.set_event_loop(loop) - метод устанавливает цикл событий для текущего контекста.
+
+asyncio.get_running_loop() - метод возвращает текущий запущенный цикл событий в текущем потоке ОС. Вызывает исключение RuntimeError, если нет запущенного цикла событий.
+
+asyncio.Shield() - создает объект Shield, который может использоваться для защиты кода от воздействия внешних циклов событий или от отмены с помощью  Task.cancel()
+asyncio.run_until_complete(future) - метод запускает цикл событий, пока future не выполнится.
+
+asyncio.run_coroutine_threadsafe(coro, loop) - метод является потокобезопасным и предназначен для запуска корутины в указанном цикле событий.
